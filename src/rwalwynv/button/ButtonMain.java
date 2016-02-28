@@ -6,6 +6,8 @@ public class ButtonMain {
 		// TODO Auto-generated method stub
 		Button button=new Button(true);
 		
+		
+		System.out.println("This is the button Main");
 		button.switchOn();
 		button.switchOn();
 		button.switchOff();

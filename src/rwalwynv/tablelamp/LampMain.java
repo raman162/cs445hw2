@@ -6,7 +6,7 @@ public class LampMain {
 		// TODO Auto-generated method stub
 	Lamp lamp = new Lamp(true);
 	
-	
+	System.out.println("THIS IS THE LAMP MAIN!");
 	lamp.pushDown();
 	lamp.pushDown();
 	}
