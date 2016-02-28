@@ -15,13 +15,13 @@ public class Button {
 	
 	public void switchOn(){
 		this.button=true;
-//		bulb.on();
+		bulb.on();
 		System.out.println("Button switched to ON");
 	}
 	
 	public void switchOff(){
 		this.button=false;
-//		bulb.off();
+		bulb.off();
 		System.out.println("Button switched to OFF");
 	}
 	

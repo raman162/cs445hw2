@@ -23,16 +23,12 @@ public class LampTest {
 		System.setErr(new PrintStream(errContent));	
 	}
 	@Test
-	public void testLampOn(){
-		lamp.on();
-		assertEquals("Button switched to ON" +linesep, outContent.toString());
+	public void testLampPushDown(){
+		lamp.pushDown();
+		assertEquals("Lightbulb off" +linesep+ "Button switched to OFF" +linesep, outContent.toString());
 		outContent.reset();
-	}
-	
-	@Test
-	public void testLampOff(){
-		lamp.off();
-		assertEquals("Button switched to OFF" +linesep, outContent.toString());
+		lamp.pushDown();
+		assertEquals("Lightbulb on" +linesep+"Button switched to ON" +linesep, outContent.toString());
 		outContent.reset();
 	}
 

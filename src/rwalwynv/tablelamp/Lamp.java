@@ -1,23 +1,19 @@
 package rwalwynv.tablelamp;
 
-import rwalwynv.button.*;
+import rwalwynv.pushdownbutton.*;
 
 public class Lamp {
-	private Button button;
+	private PushDownButton button;
 	
 	
 	
 	
 	public Lamp(boolean button){
-		this.button= new Button(button);
+		this.button= new PushDownButton(button);
 	}
 	
-	public void on(){
-		this.button.switchOn();
-	}
-	
-	public void off(){
-		this.button.switchOff();
+	public void pushDown(){
+		this.button.pushButton();
 	}
 	
 	

@@ -1,4 +1,4 @@
-package rwalwynv.button;
+package rwalwynv.pushdownbutton;
 
 import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
@@ -9,8 +9,8 @@ import java.io.PrintStream;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ButtonTest {
-	Button button = new Button(true);
+public class PushDownButtonTest {
+	PushDownButton pushDownButton = new PushDownButton(true);
 	String linesep=System.getProperty("line.separator");
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -23,18 +23,12 @@ public class ButtonTest {
 	}
 	
 	@Test
-	public void testSwitchOn(){
-		button.switchOn();
-		assertEquals("Lightbulb on" +linesep+"Button switched to ON" +linesep,outContent.toString() );
+	public void pushDownTest(){
+		pushDownButton.pushButton();
+		assertEquals("Lightbulb off" +linesep+ "Button switched to OFF" +linesep, outContent.toString());
 		outContent.reset();
-		assertEquals(button.getSwitch(), true);
-	}
-	
-	@Test
-	public void testSwtichOff(){
-		button.switchOff();
-		assertEquals("Lightbulb off" +linesep+ "Button switched to OFF" +linesep,outContent.toString());
+		pushDownButton.pushButton();
+		assertEquals("Lightbulb on" +linesep+"Button switched to ON" +linesep, outContent.toString());
 		outContent.reset();
-		assertEquals(button.getSwitch(), false);
 	}
 }
