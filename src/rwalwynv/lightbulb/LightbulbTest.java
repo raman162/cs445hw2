@@ -1,5 +1,4 @@
-package rwalwynv.tablelamp;
-
+package rwalwynv.lightbulb;
 
 import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
@@ -9,9 +8,9 @@ import java.io.PrintStream;
 
 import org.junit.Before;
 import org.junit.Test;
-public class LampTest {
-	
-	Lamp lamp = new Lamp(true);
+
+public class LightbulbTest {
+	Lightbulb bulb=new Lightbulb(true);
 	String linesep=System.getProperty("line.separator");
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -20,20 +19,23 @@ public class LampTest {
 	@Before
 	public void setUpStreams(){
 		System.setOut(new PrintStream(outContent));
-		System.setErr(new PrintStream(errContent));	
+		System.setErr(new PrintStream(errContent));
 	}
+	
+	
 	@Test
-	public void testLampOn(){
-		lamp.on();
-		assertEquals("Button switched to ON" +linesep, outContent.toString());
+	public void testOn(){
+		bulb.on();
+		assertEquals("Lightbulb on" +linesep, outContent.toString());
 		outContent.reset();
+		assertEquals(true, bulb.getBulb());
 	}
 	
 	@Test
-	public void testLampOff(){
-		lamp.off();
-		assertEquals("Button switched to OFF" +linesep, outContent.toString());
+	public void testOff(){
+		bulb.off();
+		assertEquals("Lightbulb off" +linesep, outContent.toString());
 		outContent.reset();
+		assertEquals(false, bulb.getBulb());
 	}
-
 }

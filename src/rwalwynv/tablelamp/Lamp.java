@@ -1,15 +1,23 @@
 package rwalwynv.tablelamp;
 
+import rwalwynv.button.*;
+
 public class Lamp {
-	private String name;
+	private Button button;
 	
 	
-	public Lamp(String name){
-		this.name=name;
+	
+	
+	public Lamp(boolean button){
+		this.button= new Button(button);
 	}
 	
-	public String getName(){
-		return this.name;
+	public void on(){
+		this.button.switchOn();
+	}
+	
+	public void off(){
+		this.button.switchOff();
 	}
 	
 	
